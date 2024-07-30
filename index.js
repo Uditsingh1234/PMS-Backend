@@ -1,4 +1,3 @@
-// index.js (Backend)
 import dotenv from 'dotenv';
 dotenv.config();
 import express from 'express';
@@ -7,7 +6,16 @@ import { createClient } from '@supabase/supabase-js';
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+
+// CORS configuration
+const corsOptions = {
+  origin: 'https://pms-frontend-rflyt7y5h-udit-singhs-projects.vercel.app/', // Replace with your actual frontend URL
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+  optionsSuccessStatus: 204
+};
+
+app.use(cors(corsOptions));
 
 // Supabase client setup
 const supabaseUrl = process.env.VITE_SUPABASE_URL;
