@@ -12,7 +12,8 @@ const corsOptions = {
   origin: 'https://pms-frontend-rflyt7y5h-udit-singhs-projects.vercel.app/', // Replace with your actual frontend URL
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
-  optionsSuccessStatus: 204
+  optionsSuccessStatus: 204,
+  preflightContinue: false
 };
 
 app.use(cors(corsOptions));
