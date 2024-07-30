@@ -56,6 +56,6 @@ app.post('/login', async (req, res) => {
   }
 });
 
-// app.listen(9002, () => {
-//   console.log('Server is running on port 9002');
-// });
+app.listen(9002, () => {
+  console.log('Server is running on port 9002');
+});
