@@ -13,8 +13,12 @@ const supabaseUrl = process.env.VITE_SUPABASE_URL;
 const supabaseAnonKey = process.env.VITE_SUPABASE_ANON_KEY;
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
+app.get('/', (req, res) => {
+  res.send('Server is running and accessible');
+});
+
 app.post('/login', async (req, res) => {
-  
+  console.log("server is running")
   const { email, password } = req.body;
 
   try {
