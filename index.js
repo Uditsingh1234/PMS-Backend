@@ -16,9 +16,12 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 app.get('/', (req, res) => {
   res.send('Server is running and accessible');
 });
+app.get('/login', (req, res) => {
+  res.send("message from login")
+});
 
 app.post('/login', async (req, res) => {
-  console.log("server is running")
+  
   const { email, password } = req.body;
 
   try {
@@ -51,6 +54,6 @@ app.post('/login', async (req, res) => {
   }
 });
 
-app.listen(9002, () => {
+app.listen(process.env.VITE_PORT, () => {
   console.log('Server is running on port 9002');
 });
