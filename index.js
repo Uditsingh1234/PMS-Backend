@@ -54,6 +54,6 @@ app.post('/login', async (req, res) => {
   }
 });
 
-app.listen(process.env.VITE_PORT, () => {
+app.listen(9002, () => {
   console.log('Server is running on port 9002');
 });
